@@ -27,7 +27,7 @@ The goal of this project was not just to implement features, but to improve code
 
 ## 🌐 Live Demo
 
-(https://task-list-eight-teal.vercel.app/)
+https://task-list-eight-teal.vercel.app/
 
 ---
 
