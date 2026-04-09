@@ -25,6 +25,12 @@ The goal of this project was not just to implement features, but to improve code
 
 ---
 
+## 🌐 Live Demo
+
+(https://task-list-eight-teal.vercel.app/)
+
+---
+
 ## 🧩 Architecture & Decisions
 
 ### ❗ Problem: Prop Drilling
@@ -48,14 +54,6 @@ This allowed:
 * separated UI and state management
 * organized components into folders
 * 
----
-
----
-
-## 🌐 Live Demo
-
-(link)
-
 ---
 
 ## 📦 Installation
