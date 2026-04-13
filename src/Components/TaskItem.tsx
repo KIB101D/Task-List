@@ -1,13 +1,12 @@
-import { useContext } from "react";
-import { TaskContext } from "../Context/TaskProvider";
 import Task from "../Types/Task";
+import { useTaskContext } from "../hooks/useTaskContext";
 
 interface TaskItemProps {
   task: Task;
 }
 
 function TaskItem({ task }: TaskItemProps) {
-  const { deleteTask, completeTask } = useContext(TaskContext);
+  const { deleteTask, completeTask } = useTaskContext();
   const { title, priority, deadline, id } = task;
   const isOverdue = new Date() > new Date(deadline);
 
