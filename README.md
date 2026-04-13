@@ -74,7 +74,6 @@ const { addTask } = useTaskContext();
 ```
 
 🎥 After (Real Usage)
-
 <p align="center"> <img src="./screenshots/customHookUsage.gif" width="70%" /> </p>
 
 
