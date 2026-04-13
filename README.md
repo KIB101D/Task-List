@@ -46,6 +46,8 @@ This allowed:
 
 - elimination of unnecessary prop passing
 
+---
+
 ### ❗ Problem: Repetitive Context Usage
 
 Using useContext directly in multiple components led to duplicated logic and repeated null checks.
@@ -59,18 +61,20 @@ This made components harder to read and increased cognitive load when working wi
   <img src="./screenshots/IMG_5881.PNG" width="32%" />
 </p>
 
-✅ Solution: Custom Hook
+### ✅ Solution: Custom Hook
 
-To simplify this, I extracted the context logic into a reusable [custom hook](https://github.com/KIB101D/Task-List/blob/main/src/hooks/useTaskContext.ts):
+To simplify this, I extracted the context logic into a reusable custom hook:
 
+👉 [useTaskContext hook](https://github.com/KIB101D/Task-List/blob/main/src/hooks/useTaskContext.ts)
 
 Now components can access context cleanly:
 
+```ts
 const { addTask } = useTaskContext();
+```
 
 🎥 After (Real Usage)
-
-
+<p align="center"> <img src="./screenshots/customHookUsage.gif" width="70%" /> </p>
 
 
 💡 Instead of repetitive boilerplate across multiple components — a single clean and reusable solution.
