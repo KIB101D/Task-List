@@ -1,25 +1,11 @@
-import { useContext, useState } from "react";
-import { TaskContext } from "../Context/TaskProvider";
+import { useState } from "react";
+import { TaskContextType } from "../Context/TaskProvider";
+import { useTaskContext } from "../hooks/useTaskContext";
 
 type Priority = "Low" | "Medium" | "High";
-type AddTask = (task: {
-  title: string;
-  priority: Priority;
-  deadline: string;
-}) => void;
-
-interface TaskContextType {
-  addTask: AddTask;
-}
 
 function TaskForm() {
-  const context = useContext(TaskContext);
-
-  if (!context) {
-    throw new Error("TaskContext not found");
-  }
-
-  const { addTask }: TaskContextType = context;
+  const { addTask }: TaskContextType = useTaskContext();
   const [title, setTitle] = useState("");
   const [priority, setPriority] = useState<Priority>("Low");
   const [deadline, setDeadline] = useState("");
