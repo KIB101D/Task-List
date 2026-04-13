@@ -1,10 +1,9 @@
-import { useContext } from "react";
 import TaskItem from "./TaskItem";
-import { TaskContext } from "../Context/TaskProvider";
 import Task from "../Types/Task";
+import { useTaskContext } from "../hooks/useTaskContext";
 
 function CompletedTaskList() {
-  const { completedTasks } = useContext(TaskContext);
+  const { completedTasks } = useTaskContext();
   return (
     <ul className="completed-task-list">
       {completedTasks.map((task: Task) => (
