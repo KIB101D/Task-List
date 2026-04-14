@@ -56,9 +56,9 @@ This made components harder to read and increased cognitive load when working wi
 
 📸 Before
 <p align="center">
-  <img src="./screenshots/IMG_5879.PNG" width="32%" />
-  <img src="./screenshots/IMG_5880.PNG" width="32%" />
-  <img src="./screenshots/IMG_5881.PNG" width="32%" />
+  <img src="./screenshots/IMG_5879.PNG" width="70%" />
+  <img src="./screenshots/IMG_5880.PNG" width="70%" />
+  <img src="./screenshots/IMG_5881.PNG" width="70%" />
 </p>
 
 ### ✅ Solution: Custom Hook
