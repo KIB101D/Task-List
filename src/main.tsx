@@ -1,8 +1,8 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
-import App from "./App.jsx";
-import { TaskProvider } from "./Context/TaskProvider.jsx";
+import App from "./App.tsx";
+import { TaskProvider } from "./Context/TaskProvider.tsx";
 
 const rootElement = document.getElementById("root");
 if (!rootElement) {
