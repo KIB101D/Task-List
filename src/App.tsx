@@ -115,10 +115,6 @@ function App() {
                 {/* Only completed */}
                 {activeTasks.length === 0 && completedTasks.length > 0 && (
                   <>
-                    <div className="empty-state">
-                      <p className="empty-title">No active tasks left</p>
-                    </div>
-
                     <div className="completed-divider" />
                     <CompletedTaskList />
                   </>
