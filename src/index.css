@@ -331,3 +331,47 @@ h2 {
   background-color: #f0f0f0;
   font-size: 0.9em;
 }
+
+.filter-controls {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.filter-button {
+  background: none;
+  border: none;
+  color: #7f8c8d;
+  font-size: 0.9em;
+  cursor: pointer;
+  padding: 2px 4px;
+  transition: color 0.2s ease;
+}
+
+.filter-button.active {
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.filter-button:hover {
+  color: #2c3e50;
+}
+
+.empty-state {
+  text-align: center;
+  color: #7f8c8d;
+  padding: 30px 10px;
+}
+
+.empty-title {
+  font-size: 1.1em;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 6px;
+}
+
+.empty-subtitle {
+  font-size: 0.85em;
+  opacity: 0.8;
+}
+
