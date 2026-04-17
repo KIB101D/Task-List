@@ -43,6 +43,8 @@ export type TaskContextType = {
 
   sortTask: (tasks: Task[]) => Task[];
   toggleSortOrder: (type: string) => void;
+
+  updateTask: (id: number, updatedData: Partial<Task>) => void;
 };
 
 export const TaskContext = createContext<TaskContextType | null>(null);
@@ -52,7 +54,10 @@ type ChildrenProps = {
 };
 
 export function TaskProvider({ children }: ChildrenProps) {
-  const [tasks, setTasks] = useState<Task[]>([]);
+  const [tasks, setTasks] = useState<Task[]>(() => {
+    const stored = localStorage.getItem("tasks");
+    return stored ? JSON.parse(stored) : [];
+  });
   const [openSection, setOpenSection] = useState({
     taskList: false,
     tasks: true,
@@ -78,6 +83,10 @@ export function TaskProvider({ children }: ChildrenProps) {
       [sectionName]: !prev[sectionName],
     }));
   }
+
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
 
   function addTask(task: {
     title: string;
@@ -122,6 +131,12 @@ export function TaskProvider({ children }: ChildrenProps) {
     }
   }
 
+  function updateTask(id: number, updatedData: Partial<Task>) {
+    setTasks((prev) =>
+      prev.map((task) => (task.id === id ? { ...task, ...updatedData } : task)),
+    );
+  }
+
   const activeTasks = sortTask(tasks.filter((task) => !task.completed));
   const completedTasks = tasks.filter((task) => task.completed);
 
@@ -145,6 +160,7 @@ export function TaskProvider({ children }: ChildrenProps) {
         sortTask,
         toggleSortOrder,
         activeTasks,
+        updateTask,
       }}
     >
       {children}
