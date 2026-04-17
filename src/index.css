@@ -220,6 +220,7 @@ h2 {
 
 .task-info {
   flex: 1;
+  overflow: hidden;
   text-align: left;
 }
 
@@ -375,3 +376,19 @@ h2 {
   opacity: 0.8;
 }
 
+.edit-input {
+  font: inherit;
+  color: inherit;
+  border: none;
+  outline: none;
+  background: transparent;
+
+  min-width: 1ch;
+  max-width: 100%;
+
+  white-space: nowrap;
+}
+
+.task-info input:focus {
+  border-bottom: 1px solid #3498db;
+}
