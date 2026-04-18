@@ -1,26 +1,31 @@
 # 📒 Task Manager (React)
 
-A structured task management application built with React, focused on clean state management, reusable logic, and scalable architecture.
+A task management application built with React and TypeScript, focused on scalable state management, reusable logic, and clean component architecture.
 
 ---
 
 🎬 Preview 
 
-<p align="center"> <img src="./screenshots/appShowcase.gif" width="80%" /> </p>
+<p align="center"> 
+  <img src="./screenshots/appShowcase.gif" width="80%" />
+</p>
 
 ---
 
 ## 🚀 Core Features
-Add / delete / complete tasks
-Inline editing with keyboard support
-Priority system (Low / Medium / High)
-Deadline tracking with overdue detection
+- Add / delete / complete tasks
+- Priority system (Low / Medium / High)
+- Sorting (by date and priority)
+- Inline editing with keyboard support
+- Persistent state (localStorage)
+- Deadline tracking with real-time overdue detection
 
 ---
 
 ## 🧠 Tech Stack
 
 - React (functional components + hooks)
+- TypeScript (strong typing for state, context, and component props)
 - Context API (state management)
 - Vite
 - CSS
@@ -28,10 +33,8 @@ Deadline tracking with overdue detection
 ---
 
 ## 🔧 UX & Improvements
-Sorting (by date and priority)
-Filtered views (All / Active / Completed)
-Persistent state (localStorage)
-Clean empty states
+- Filtered views (All / Active / Completed)
+- Clean empty states
 
 ---
 
@@ -66,9 +69,9 @@ This made components harder to read and increased cognitive load when working wi
 
 📸 Before
 <p align="center">
-  <img src="./screenshots/IMG_5879.PNG" width="70%" />
-  <img src="./screenshots/IMG_5880.PNG" width="70%" />
-  <img src="./screenshots/IMG_5881.PNG" width="70%" />
+  <img src="./screenshots/IMG_5879.PNG" width="40%" />
+  <img src="./screenshots/IMG_5880.PNG" width="40%" />
+  <img src="./screenshots/IMG_5881.PNG" width="40%" />
 </p>
 
 ### ✅ Solution: Custom Hook
@@ -88,6 +91,30 @@ const { addTask } = useTaskContext();
 
 
 💡 Instead of repetitive boilerplate across multiple components — a single clean and reusable solution.
+
+### ❗ Problem: Tasks Becoming Outdated
+
+Tasks with deadlines were not updating their status automatically, which could lead to outdated UI.
+
+### ✅ Solution: Time-Based Re-rendering
+
+Introduced a small time-based state update that triggers a re-render every minute, ensuring overdue tasks are recalculated and reflected in the UI without user interaction.
+
+```ts
+useEffect(() => {
+  const interval = setInterval(() => {
+    setTick((t) => t + 1); 
+  }, 60000); // one minute
+
+  return () => clearInterval(interval);
+}, []);
+```
+
+🎥 Example
+
+<p align="center">
+  <img src="./screenshots/overdue-tick.gif" width="80%" />
+</p>
 
 ---
 
