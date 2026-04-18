@@ -96,6 +96,8 @@ const { addTask } = useTaskContext();
 
 Tasks with deadlines were not updating their status automatically, which could lead to outdated UI.
 
+---
+
 ### ✅ Solution: Time-Based Re-rendering
 
 Introduced a small time-based state update that triggers a re-render every minute, ensuring overdue tasks are recalculated and reflected in the UI without user interaction.
