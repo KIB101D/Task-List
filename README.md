@@ -6,7 +6,7 @@ A structured task management application built with React, focused on clean stat
 
 🎬 Preview 
 
-https://raw.githubusercontent.com/KIB101D/Task-List/main/screenshots/showcase-app.mp4
+<p align="center"> <img src="./screenshots/appShowcase.gif" width="80%" /> </p>
 
 ---
 
