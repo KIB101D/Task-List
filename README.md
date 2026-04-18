@@ -1,18 +1,20 @@
 # 📒 Task Manager (React)
 
-A simple but structured task management application built with React.
-
-The goal of this project was not just to implement features, but to improve code structure, state management, and maintainability.
+A structured task management application built with React, focused on clean state management, reusable logic, and scalable architecture.
 
 ---
 
-## 🚀 Features
+🎬 Preview 
 
-- Add / delete / complete tasks
-- Priority system (Low / Medium / High)
-- Deadline management
-- Sorting (by date and priority)
-- Real-time overdue detection
+https://github.com/KIB101D/Task-List/blob/main/screenshots/showcase-app.mp4
+
+---
+
+## 🚀 Core Features
+Add / delete / complete tasks
+Inline editing with keyboard support
+Priority system (Low / Medium / High)
+Deadline tracking with overdue detection
 
 ---
 
@@ -22,6 +24,14 @@ The goal of this project was not just to implement features, but to improve code
 - Context API (state management)
 - Vite
 - CSS
+
+---
+
+## 🔧 UX & Improvements
+Sorting (by date and priority)
+Filtered views (All / Active / Completed)
+Persistent state (localStorage)
+Clean empty states
 
 ---
 
@@ -95,11 +105,3 @@ const { addTask } = useTaskContext();
 npm install
 npm run dev
 ```
-
----
-
-## 📌 Future Improvements
-
-- better UX for editing tasks
-- animations
-- improved error handling
