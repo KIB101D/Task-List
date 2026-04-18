@@ -92,11 +92,11 @@ const { addTask } = useTaskContext();
 
 💡 Instead of repetitive boilerplate across multiple components — a single clean and reusable solution.
 
+---
+
 ### ❗ Problem: Tasks Becoming Outdated
 
 Tasks with deadlines were not updating their status automatically, which could lead to outdated UI.
-
----
 
 ### ✅ Solution: Time-Based Re-rendering
 
